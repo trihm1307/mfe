@@ -1,14 +1,16 @@
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const config = {
     mode: 'development',
     output: {
-        publicPath: 'http://localhost:8080/',
-    },
+        publicPath: 'http://localhost:8082/',
+        filename: '[name].[contenthash].js'
+      },
     devServer: {
-        port: 8080,
+        port: 8082,
         historyApiFallback: {
-            index: '/',
+            index: 'index.html',
         },
     },
     plugins: [
@@ -16,11 +18,12 @@ const config = {
             template: './public/index.html'
         }),
         new ModuleFederationPlugin({
-            name: "container",
-            remotes: {
-                mfe1: 'mfe1@http://localhost:8081/remoteEntry.js',
-                mfe2: 'mfe2@http://localhost:8082/remoteEntry.js'
-            }
+            name: "mfe2",
+            filename: "remoteEntry.js",
+            exposes: {
+                './boostrap': './src/boostrap',
+            },
+            shared: {}
         })
     ]
 }
