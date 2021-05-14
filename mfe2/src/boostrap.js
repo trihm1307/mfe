@@ -1,12 +1,12 @@
 import faker from 'faker';
-console.log("Loading mfe1");
-let products = '';
-const mount = (el) => {
+console.log("Loading mfe2");
+const mountBrand = (el) => {
+    let brand = '';
     for (let i = 0; i < 5; i++) {
         let itemName = faker.vehicle.manufacturer();
-        products += `<div>${itemName}</div>`;
+        brand += `<div>${itemName}</div>`;
     }
     el.innerHTML ="<h1>Microservice 2</h1>";
-    el.innerHTML += products;
+    el.innerHTML += brand;
 }
-export { mount };
+export { mountBrand };

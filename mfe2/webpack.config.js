@@ -22,8 +22,7 @@ const config = {
             filename: "remoteEntry.js",
             exposes: {
                 './boostrap': './src/boostrap',
-            },
-            shared: {}
+            }
         })
     ]
 }

@@ -20,7 +20,7 @@ const config = {
             remotes: {
                 mfe1: 'mfe1@http://localhost:8081/remoteEntry.js',
                 mfe2: 'mfe2@http://localhost:8082/remoteEntry.js'
-            }
+            },
         })
     ]
 }

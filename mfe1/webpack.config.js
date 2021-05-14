@@ -23,7 +23,6 @@ const config = {
             exposes: {
                 './boostrap': './src/boostrap',
             },
-            shared: {}
         })
     ]
 }
