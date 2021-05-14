@@ -1,6 +1,5 @@
 import faker from 'faker';
-
-console.log("this is mfe1");
+console.log("Loading mfe1");
 let products = '';
 const mount = (el) => {
     for (let i = 0; i < 5; i++) {
@@ -9,9 +8,4 @@ const mount = (el) => {
     }
     el.innerHTML = products;
 }
-const root = document.querySelector("#root");
-if (root) {
-    mount(root);
-}
-
 export { mount };

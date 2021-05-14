@@ -1,12 +1,14 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const config = {
     mode: 'development',
     output: {
-        publicPath: 'http://localhost:8001/',
-    },
+        publicPath: 'http://localhost:8081/',
+        filename: '[name].[contenthash].js'
+      },
     devServer: {
-        port: 8001,
+        port: 8081,
         historyApiFallback: {
             index: 'index.html',
         },
@@ -19,8 +21,9 @@ const config = {
             name: "mfe1",
             filename: "remoteEntry.js",
             exposes: {
-                './mfe1': './src/boostrap',
-            }
+                './boostrap': './src/boostrap',
+            },
+            shared: {}
         })
     ]
 }
