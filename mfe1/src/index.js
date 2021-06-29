@@ -1,4 +1,4 @@
-import { mount } from "./boostrap"
+import { mount } from "./productName"
 
-import("./boostrap")
+import("./productName")
 mount(document.querySelector("#root"));

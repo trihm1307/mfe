@@ -21,7 +21,7 @@ const config = {
             name: "mfe2",
             filename: "remoteEntry.js",
             exposes: {
-                './boostrap': './src/boostrap',
+                './manufacturer': './src/manufacturer',
             }
         })
     ]

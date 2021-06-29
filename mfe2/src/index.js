@@ -1,4 +1,2 @@
-import { mount } from "./boostrap"
-
-import("./boostrap")
-mountBrand(document.querySelector("#root"));
+import { mount } from "./manufacturer"
+mount(document.querySelector("#root"));

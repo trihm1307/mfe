@@ -1,10 +1,15 @@
-console.log("Loading container");
+import {mount as mountProductName} from 'mfe1/productName';
+import {mount as mountManufacturer} from 'mfe2/manufacturer';
 
-let load = ()=>{
+window.onhashchange = function() {  
+    routing();
+}
+
+const routing = function(){
     switch(window.location.hash){
-        case "#/mfe1": import('mfe1/boostrap').then(module=>module.mount(root)); break;
-        case "#/mfe2": import('mfe2/boostrap').then(module=>module.mount(root)); break;
+        case '#/mfe1': mountProductName(root); break;
+        case '#/mfe2': mountManufacturer(root); break;
     }
 }
-window.onhashchange = ()=>load();
-load();
+
+routing();
